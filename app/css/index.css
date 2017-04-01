@@ -1,0 +1,80 @@
+body {
+	font-family: LeonRegular, sans-serif;
+}
+
+@font-face {
+	font-family: LeonRegular;
+	src: url("../fonts/Leon-Regular_TRIAL.ttf");
+}
+
+#header {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(51, 119, 255);
+	border-bottom: 5px solid black;
+	border-top: 5px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
+
+.flex-header {
+	padding: 15px;
+	margin: 0px;
+	width: 1000px;
+	display: flex;
+	justify-content: center;
+}
+
+.flex-header img {
+	height: 80px;
+	width: 600px;
+}
+
+body {
+	margin: 0px;
+	background-color: rgb(167, 188, 206);
+}
+
+body .tagline {
+	display: flex;
+	justify-content: center;
+	margin-top: 60px;
+	margin-bottom: 80px;
+	font-size: 40px;
+}
+
+.flex-body {
+
+	padding: 0px;
+	margin: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.flex-body h1 {
+	margin: 0px;
+}
+
+.flex-body .color {
+	height: 400px;
+	width: 400px;
+	background-color: white;
+	border: 5px solid black;
+}
+
+/*.rgb-hex div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}*/
+
+.rgb label {
+	display: inline-block;
+	width: 100px;
+}
+
+.rgb input {
+	display: inline-block;
+	width: 100px;
+}
