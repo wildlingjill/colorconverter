@@ -7,6 +7,11 @@ body {
 	src: url("../fonts/Leon-Regular_TRIAL.ttf");
 }
 
+@font-face {
+	font-family: Gravity;
+	src: url("../fonts/Gravity-Book.otf");
+}
+
 #header {
 	display: flex;
 	justify-content: center;
@@ -39,21 +44,27 @@ body .tagline {
 	display: flex;
 	justify-content: center;
 	margin-top: 60px;
-	margin-bottom: 80px;
+	margin-bottom: 60px;
 	font-size: 40px;
 }
 
-.flex-body {
+body .preview {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
 
+.flex-body {
 	padding: 0px;
-	margin: 30px;
+	margin: 10px 30px 30px 30px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 }
 
 .flex-body h1 {
-	margin: 0px;
+	margin: 0px 0px 20px 0px;
 }
 
 .flex-body .color {
@@ -61,20 +72,64 @@ body .tagline {
 	width: 400px;
 	background-color: white;
 	border: 5px solid black;
+	border-radius: 5px;
 }
 
-/*.rgb-hex div {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}*/
+.rgb {
+	margin-bottom: 20px;
+	font-size: 24px;
+}
 
 .rgb label {
 	display: inline-block;
-	width: 100px;
+	width: 60px;
+	padding-right: 5px;
+	text-align: right;
+	margin-left: 20px;
 }
 
 .rgb input {
 	display: inline-block;
 	width: 100px;
+	height: 25px;
+	margin-bottom: 5px;
+	font-size: 18px;
+	font-family: Gravity, sans-serif;
+	border-radius: 5px;
+	border: 2px solid black;
+	padding-left: 5px;
+}
+
+.hex {
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+
+.hex label {
+	display: inline-block;
+	width: 60px;
+	padding-right: 5px;
+	text-align: right;
+	margin-left: 10px;
+}
+
+.hex input {
+	display: inline-block;
+	width: 100px;
+	height: 25px;
+	margin-bottom: 5px;
+	font-size: 18px;
+	font-family: Gravity, sans-serif;
+	border-radius: 5px;
+	border: 2px solid black;
+	padding-left: 5px;
+}
+
+.button {
+	width: 250px;
+	font-size: 20px;
+	font-family: LeonRegular, sans-serif;
+	border-radius: 5px;
+	background-color: rgb(51, 119, 255);
+	border: 2px solid black;
 }

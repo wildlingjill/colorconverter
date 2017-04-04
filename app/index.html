@@ -4,16 +4,51 @@
 		<meta charset="utf-8">
 		<title>Hex/RGB Color Converter</title>
 		<link rel="stylesheet" href="css/index.css">
+		<script src="master.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById("rgbToHex").addEventListener("click", rgbToHex);
+
+				function rgbToHex() {
+					var red = document.getElementById("red").value;
+					var green = document.getElementById("green").value;
+					var blue = document.getElementById("blue").value;
+					if (red === "" || green === "" || blue === ""){
+						alert("Please fill in all fields!");
+					} else if (red.length > 3 || green.length > 3 || blue.length > 3 ){
+						alert("Please give valid RGB values!");
+					} else {
+						colorvertRGB();
+					}
+				}
+
+				document.getElementById("hexToRGB").addEventListener("click", hexToRGB);
+
+				function hexToRGB() {
+					var hex = document.getElementById("hex").value;
+					console.log(hex);
+					if (hex === ""){
+						alert("Please enter a hex code!");
+					} else if (hex.length < 6 || hex.length > 6) {
+						alert("Please give a valid hex code!");
+					} else {
+						colorvertHex();
+					}
+				}
+			}
+		</script>
 	</head>
 	<body>
 
 		<div id="header">
 			<header class="flex-header">
+				<!-- header is budmo jiggler font from dafont.com -->
 				<img src="img/colorvert.png" alt="logo">
 			</header>
 		</div>
 
 		<h1 class="tagline">Convert your colors from RGB to Hex and back!</h1>
+		<h2 class="preview">Your Colorvert preview:</h2>
 
 		<div class="flex-body">
 
@@ -32,6 +67,9 @@
 						<label for="blue">Blue: </label>
 						<input type=text id="blue" placeholder="Blue">
 					</div>
+					<div class="rgb">
+						<button type="button" class="button" id="rgbToHex" name="rgbToHex">Colorvert to Hex!</button>
+					</div>
 				</div>
 			</div>
 
@@ -39,8 +77,12 @@
 
 			<div class="hex-rgb">
 				<h1>Convert Hex to RGB</h1>
-				<div class="">
-					Hex: <input type=text placeholder="Hex code">
+				<div class="hex">
+					<label for="hex">Hex: </label>
+					<input type=text id="hex" placeholder="Hex code">
+				</div>
+				<div class="hex">
+					<button type="button" class="button" id="hexToRGB" name="hexToRGB">Colorvert to RGB!</button>
 				</div>
 			</div>
 
