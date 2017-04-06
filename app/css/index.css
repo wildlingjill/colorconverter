@@ -67,7 +67,7 @@ body .preview {
 	margin: 0px 0px 20px 0px;
 }
 
-.flex-body .color {
+.flex-body #color {
 	height: 400px;
 	width: 400px;
 	background-color: white;
@@ -132,4 +132,14 @@ body .preview {
 	border-radius: 5px;
 	background-color: rgb(51, 119, 255);
 	border: 2px solid black;
+}
+
+#footer {
+	font-family: Gravity, sans-serif;
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	margin: 0px;
+	padding: 0px;
 }

@@ -1,6 +1,14 @@
+var http = require("http");
+var path = require("path");
 var express = require("express");
 var app = express();
 var converter = require("./converter");
+
+app.get("/", function(req, res){
+	res.sendFile(path.join(__dirname, "./", "index.html"));
+})
+
+app.use('/static', express.static(path.join(__dirname, '../app')));
 
 app.get("/rgbToHex", function(req, res){
 
@@ -21,7 +29,7 @@ app.get("/hexToRgb", function(req, res){
 	var rgb = converter.hexToRgb(hex);
 
 	res.send(JSON.stringify(rgb));
-	
+
 });
 
 app.listen(3000);

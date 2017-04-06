@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Hex/RGB Color Converter</title>
-		<link rel="stylesheet" href="css/index.css">
-		<script src="master.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="/static/css/index.css">
+		<script src="/static/master.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			window.onload = function() {
 				document.getElementById("rgbToHex").addEventListener("click", rgbToHex);
@@ -17,8 +17,11 @@
 						alert("Please fill in all fields!");
 					} else if (red.length > 3 || green.length > 3 || blue.length > 3 ){
 						alert("Please give valid RGB values!");
+					} else if (red > 255 || green > 255 || blue > 255 ){
+						alert("Please enter a value between 0 and 255!");
 					} else {
-						colorvertRGB();
+       					document.getElementById("color").style.backgroundColor="rgb(" + red + "," + green + "," + blue + ")";
+						colorvertRGB(red, green, blue);
 					}
 				}
 
@@ -26,12 +29,16 @@
 
 				function hexToRGB() {
 					var hex = document.getElementById("hex").value;
+					var validHex  = /^[0-9A-F]{6}$/i.test(hex);
 					console.log(hex);
 					if (hex === ""){
 						alert("Please enter a hex code!");
 					} else if (hex.length < 6 || hex.length > 6) {
-						alert("Please give a valid hex code!");
+						alert("Please enter a 6 digit hex code!");
+					} else if (!validHex) {
+						alert("Please enter a valid hex code!");
 					} else {
+						document.getElementById("color").style.backgroundColor="#" + hex;
 						colorvertHex();
 					}
 				}
@@ -43,7 +50,7 @@
 		<div id="header">
 			<header class="flex-header">
 				<!-- header is budmo jiggler font from dafont.com -->
-				<img src="img/colorvert.png" alt="logo">
+				<img src="/static/img/colorvert.png" alt="logo">
 			</header>
 		</div>
 
@@ -73,7 +80,7 @@
 				</div>
 			</div>
 
-			<div class="color"></div>
+			<div class="color" id="color"></div>
 
 			<div class="hex-rgb">
 				<h1>Convert Hex to RGB</h1>
@@ -85,7 +92,9 @@
 					<button type="button" class="button" id="hexToRGB" name="hexToRGB">Colorvert to RGB!</button>
 				</div>
 			</div>
-
 		</div>
+		<footer id="footer">
+			<p>© Jill Robinson, 2017</p>
+		</footer>
 	</body>
 </html>
