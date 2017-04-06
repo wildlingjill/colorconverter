@@ -4,46 +4,6 @@
 		<meta charset="utf-8">
 		<title>Hex/RGB Color Converter</title>
 		<link rel="stylesheet" href="/static/css/index.css">
-		<script src="/static/master.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			window.onload = function() {
-				document.getElementById("rgbToHex").addEventListener("click", rgbToHex);
-
-				function rgbToHex() {
-					var red = document.getElementById("red").value;
-					var green = document.getElementById("green").value;
-					var blue = document.getElementById("blue").value;
-					if (red === "" || green === "" || blue === ""){
-						alert("Please fill in all fields!");
-					} else if (red.length > 3 || green.length > 3 || blue.length > 3 ){
-						alert("Please give valid RGB values!");
-					} else if (red > 255 || green > 255 || blue > 255 ){
-						alert("Please enter a value between 0 and 255!");
-					} else {
-       					document.getElementById("color").style.backgroundColor="rgb(" + red + "," + green + "," + blue + ")";
-						colorvertRGB(red, green, blue);
-					}
-				}
-
-				document.getElementById("hexToRGB").addEventListener("click", hexToRGB);
-
-				function hexToRGB() {
-					var hex = document.getElementById("hex").value;
-					var validHex  = /^[0-9A-F]{6}$/i.test(hex);
-					console.log(hex);
-					if (hex === ""){
-						alert("Please enter a hex code!");
-					} else if (hex.length < 6 || hex.length > 6) {
-						alert("Please enter a 6 digit hex code!");
-					} else if (!validHex) {
-						alert("Please enter a valid hex code!");
-					} else {
-						document.getElementById("color").style.backgroundColor="#" + hex;
-						colorvertHex();
-					}
-				}
-			}
-		</script>
 	</head>
 	<body>
 
@@ -55,7 +15,8 @@
 		</div>
 
 		<h1 class="tagline">Convert your colors from RGB to Hex and back!</h1>
-		<h2 class="preview">Your Colorvert preview:</h2>
+		<h2 class="preview">Your Colorvert value:</h2>
+		<h3 id="colorvert"> </h3>
 
 		<div class="flex-body">
 
@@ -96,5 +57,48 @@
 		<footer id="footer">
 			<p>© Jill Robinson, 2017</p>
 		</footer>
+		<script src="/static/master.js" type="text/javascript"></script>
+		<!-- <script type="text/javascript">
+			window.onload = function() {
+				document.getElementById("rgbToHex").addEventListener("click", rgbToHex);
+
+				function rgbToHex() {
+					var red = document.getElementById("red").value;
+					var green = document.getElementById("green").value;
+					var blue = document.getElementById("blue").value;
+					if (red === "" || green === "" || blue === ""){
+						alert("Please fill in all fields!");
+					} else if (red.length > 3 || green.length > 3 || blue.length > 3 ){
+						alert("Please give valid RGB values!");
+					} else if (red > 255 || green > 255 || blue > 255 ){
+						alert("Please enter a value between 0 and 255!");
+					} else {
+       					document.getElementById("color").style.backgroundColor="rgb(" + red + "," + green + "," + blue + ")";
+						colorvertRGB(red, green, blue);
+						// var hex = colorvertRGB(red, green, blue);
+						// console.log(hex);
+						// document.getElementById("hex").value = hex;
+					}
+				}
+
+				document.getElementById("hexToRGB").addEventListener("click", hexToRGB);
+
+				function hexToRGB() {
+					var hex = document.getElementById("hex").value;
+					var validHex  = /^[0-9A-F]{6}$/i.test(hex);
+					console.log(hex);
+					if (hex === ""){
+						alert("Please enter a hex code!");
+					} else if (hex.length < 6 || hex.length > 6) {
+						alert("Please enter a 6 digit hex code!");
+					} else if (!validHex) {
+						alert("Please enter a valid hex code!");
+					} else {
+						document.getElementById("color").style.backgroundColor="#" + hex;
+						colorvertHex();
+					}
+				}
+			}
+		</script> -->
 	</body>
 </html>

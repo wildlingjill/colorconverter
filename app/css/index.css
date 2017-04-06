@@ -23,7 +23,7 @@ body {
 }
 
 .flex-header {
-	padding: 15px;
+	padding: 10px;
 	margin: 0px;
 	width: 1000px;
 	display: flex;
@@ -43,8 +43,8 @@ body {
 body .tagline {
 	display: flex;
 	justify-content: center;
-	margin-top: 60px;
-	margin-bottom: 60px;
+	margin-top: 30px;
+	margin-bottom: 20px;
 	font-size: 40px;
 }
 
@@ -55,9 +55,19 @@ body .preview {
 	padding-bottom: 0px;
 }
 
+body #colorvert {
+	font-family: Gravity, sans-serif;
+	font-size: 25px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	margin-top: 0px;
+}
+
 .flex-body {
 	padding: 0px;
-	margin: 10px 30px 30px 30px;
+	margin: 10px 30px 50px 30px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -68,8 +78,8 @@ body .preview {
 }
 
 .flex-body #color {
-	height: 400px;
-	width: 400px;
+	height: 380px;
+	width: 380px;
 	background-color: white;
 	border: 5px solid black;
 	border-radius: 5px;
@@ -134,12 +144,12 @@ body .preview {
 	border: 2px solid black;
 }
 
-#footer {
+#footer p {
 	font-family: Gravity, sans-serif;
 	display: block;
-	position: absolute;
+	position: relative;
 	bottom: 0px;
 	left: 0px;
-	margin: 0px;
+	margin: 5px;
 	padding: 0px;
 }
