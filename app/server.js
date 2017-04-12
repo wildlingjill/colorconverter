@@ -28,6 +28,7 @@ app.get("/hexToRgb", function(req, res){
 
 	var rgb = converter.hexToRgb(hex);
 
+	// rgb is array, has to be string so stringify it
 	res.send(JSON.stringify(rgb));
 
 });

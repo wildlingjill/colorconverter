@@ -1,5 +1,7 @@
 body {
 	font-family: LeonRegular, sans-serif;
+	margin: 0px;
+	background-color: rgb(167, 188, 206);
 }
 
 @font-face {
@@ -33,11 +35,6 @@ body {
 .flex-header img {
 	height: 80px;
 	width: 600px;
-}
-
-body {
-	margin: 0px;
-	background-color: rgb(167, 188, 206);
 }
 
 body .tagline {
