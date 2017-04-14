@@ -60,7 +60,7 @@ function colorvertRGB(red, green, blue) {
 
 	// fetch api needs to be passed rgb or hex values, put into url for http request
 	// construct url for fetch call
-	var url = "http://localhost:3000/rgbToHex?red=" + red + "&green=" + green + "&blue=" + blue;
+	var url = "/rgbToHex?red=" + red + "&green=" + green + "&blue=" + blue;
 	// use fetch to make http request
 	fetch(url).then(function(response){
 		// pull response out of returned object and pass into a callback
@@ -78,7 +78,7 @@ function colorvertRGB(red, green, blue) {
 function colorvertHex(hex){
 
 	// construct url for fetch call
-	var url = "http://localhost:3000/hexToRgb?hex=" + hex;
+	var url = "/hexToRgb?hex=" + hex;
 	// use fetch to make http request
 	fetch(url).then(function(response){
 		// pull response out of returned object and pass into a callback
